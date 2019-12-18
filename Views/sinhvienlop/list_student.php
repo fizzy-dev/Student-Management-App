@@ -6,8 +6,8 @@
 <body>
 <?php include 'Views/home.php' ?>
 <div class="danhsach">
-<h3>DANH SACH SINH VIEN</h3>
-<a href="index.php?controller=sinhvien-lop&action=update" title="">Cap nhat diem</a>
+<h3>DANH SACH SINH VIEN LOP <?php echo $malop ?></h3>
+<a href="index.php?controller=sinhvien-lop&action=update&malop=<?php echo $malop ?>" title="">Cap nhat diem</a>
 <table>
 	<thead>
 		<tr>

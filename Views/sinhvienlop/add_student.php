@@ -6,7 +6,7 @@
 <body>
     <?php include 'Views/home.php' ?>
     <div class="dangkythanhvien">
-	<h3>Them moi lop hoc</h3>
+	<h3>Them moi sinh vien lop hoc <?php echo $malop ?></h3>
 	<form action="" method="POST">
 		<table>
 			<tr>
