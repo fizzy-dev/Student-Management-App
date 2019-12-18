@@ -27,7 +27,7 @@
 			<td><?php echo $value['masv'] ?></td>
 			<td><?php echo $value['diem'] ?></td>
 			<td>
-				<a href="#">Delete</a>
+				<a href="index.php?controller=sinhvien-lop&action=delete&malop=<?php echo $malop ?>&masv=<?php echo $value['masv'] ?>">Delete</a>
 			</td>
 		</tr>
 		<?php
