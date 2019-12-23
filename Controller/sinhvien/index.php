@@ -1,4 +1,4 @@
-<?php  
+ <?php  
 if(isset($_GET['action']))
 {
 	$action= $_GET['action'];
@@ -65,6 +65,22 @@ switch ($action) {
         	}
             break;
         }
+    case 'search':
+    {
+      $type=$_GET['type'];
+      $key=$_GET['tukhoa'];
+      $tb="sinhvien";
+      $data =$db->SearchData($key,$type,$tb);
+      require_once("Views/sinhvien/search_student.php");
+      break;
+    }
+    case 'showscore':
+    {
+      $masv=$_GET['mssv'];
+      $data=$db->ShowScore($masv);
+      require_once("Views/sinhvien/show_score.php");
+      break;
+    }
     
 	default:
 		# code...

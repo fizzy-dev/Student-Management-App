@@ -61,6 +61,15 @@ if(isset($_GET['action']))
         	}
             break;
    	}
+    case 'search':
+    {
+      $type=$_GET['type'];
+      $key=$_GET['tukhoa'];
+      $tb="giaovien";
+      $data =$db->SearchData($key,$type,$tb);
+      require_once("Views/giaovien/search_teacher.php");
+      break;
+    }
    	default:
    		# code...
    		break;

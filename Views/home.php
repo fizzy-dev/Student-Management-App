@@ -81,7 +81,6 @@ body {
     <div class="dropdown-content">
       <a href="index.php?controller=thanh-vien&action=list">Danh sach sinh vien</a>
       <a href="index.php?controller=thanh-vien&action=add">Them sinh vien</a>
-      <a href="#">Tim kiem sinh vien</a>
     </div>
   </div> 
     <!--MENU QUAN LY GIAO VIEN-->
@@ -92,7 +91,6 @@ body {
     <div class="dropdown-content">
       <a href="index.php?controller=giao-vien&action=list">Danh sach giao vien</a>
       <a href="index.php?controller=giao-vien&action=add">Them giao vien</a>
-      <a href="#">Tim kiem giao vien</a>
     </div>
   </div>
     <!--MENU QUAN LY MON HOC-->
@@ -103,7 +101,6 @@ body {
     <div class="dropdown-content">
       <a href="index.php?controller=mon-hoc&action=list">Danh sach mon hoc</a>
       <a href="index.php?controller=mon-hoc&action=add">Them mon hoc</a>
-      <a href="#">Tim kiem mon hoc</a>
     </div>
   </div> 
   <!--MENU QUAN LY LOP HOC-->
@@ -114,7 +111,6 @@ body {
     <div class="dropdown-content">
       <a href="index.php?controller=lop-hoc&action=list">Danh sach lop</a>
       <a href="index.php?controller=lop-hoc&action=add">Them lop hoc</a>
-      <a href="#">Tim kiem lop hoc</a>
     </div>
   </div>  
 </div>

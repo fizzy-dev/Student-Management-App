@@ -105,6 +105,21 @@ class Database{
         return $this->execute($sql);
 	}
 
+	public function ShowScore($id)
+	{
+		$sql="SELECT * FROM sinhvienlop WHERE masv ='$id' ";
+		$this->execute($sql); 
+		if($this->num_rows()==0)
+    	{
+    		$data=0;
+    	}else{
+    		while($datas=$this->getData()){
+    			$data[]=$datas;
+    		}
+    	}
+    	return $data;
+	}
+
  // TEACHER ACTION
 	public function InsertTeacher($magv,$tengv,$donvi)
 	{
@@ -210,6 +225,24 @@ class Database{
 		$sql="DELETE FROM sinhvienlop WHERE malop='$malop' AND masv='$masv'";
 		return $this->execute($sql);
 	}
+
+	// SEARCH ACTON 
+    public function SearchData($key,$type,$table)
+    {
+    	$sql="SELECT * FROM $table WHERE $type REGEXP '$key' ";
+    	$this->execute($sql);
+    	if($this->num_rows()==0)
+    	{
+    		$data=0;
+    	}else{
+    		while($datas=$this->getData()){
+    			$data[]=$datas;
+    		}
+    	}
+    	return $data;
+    }
 }
+
+
 
 ?>
