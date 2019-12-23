@@ -161,7 +161,7 @@ class Database{
 
 
 //SINHVIEN-LOP ACTION
-	public function ShowStudentInClass($malop,$table)
+	public function getStudentInClass($malop,$table)
 	{
 		$sql="SELECT * FROM $table WHERE malop='$malop' ";
 		$this->execute($sql);
@@ -199,6 +199,17 @@ class Database{
 		return $this->execute($sql);
 	}
 
+	public function UpdateScore($masv,$malop,$diem)
+	{
+        $sql="UPDATE sinhvienlop set diem='$diem' WHERE malop = '$malop' AND masv='$masv' ";
+        return $this->execute($sql);
+	}
+
+	public function DeleteStudentClass($masv,$malop)
+	{
+		$sql="DELETE FROM sinhvienlop WHERE malop='$malop' AND masv='$masv'";
+		return $this->execute($sql);
+	}
 }
 
 ?>
