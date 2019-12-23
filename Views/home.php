@@ -72,7 +72,7 @@ body {
 <body>
 
 <div class="navbar">
-  <a href="#home">Home</a>
+  <a href="index.php">Home</a>
   <!--MENU QUAN LY SINH VIEN-->
   <div class="dropdown">
     <button class="dropbtn">Quan li sinh vien 
@@ -118,6 +118,5 @@ body {
     </div>
   </div>  
 </div>
-
-</body>
+ </body>
 </html>

@@ -16,14 +16,11 @@
    if(isset($_GET['controller']))
    {
    	$controller=$_GET['controller'];
-   }else{
-   	require_once("Views/home.php");
-   }
 
-   switch ($controller) {
-   	case 'thanh-vien':
-   		require_once("Controller/sinhvien/index.php");
-   		break;
+      switch ($controller) {
+      case 'thanh-vien':
+         require_once("Controller/sinhvien/index.php");
+         break;
       case 'giao-vien':
          require_once("Controller/giaovien/index.php");
          break;
@@ -36,8 +33,14 @@
       case 'sinhvien-lop':
          require_once("Controller/sinhvienlop/index.php");
          break;
-   	default:
-   		# code...
-   		break;
+      default:
+         # code...
+         break;
    }
+
+   }else{
+   	require_once("Views/body_home.php");
+   }
+
+
  ?>
