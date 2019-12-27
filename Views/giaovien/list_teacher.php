@@ -1,7 +1,7 @@
 <?php include 'Views/home.php' ?>
-<div class="danhsach">
+<div>
 
-<h3>DANH SACH THANH VIEN</h3>
+<h3>DANH SACH GIAO VIEN</h3>
 <div>
 	<form action="" method="GET">
 		<table>

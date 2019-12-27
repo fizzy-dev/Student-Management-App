@@ -2,6 +2,23 @@
 <html>
 <head>
 	<title>Them mon hoc -Quan li mon hoc</title>
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".mamh").blur(function(){
+				var u= $(this).val();
+				$.post("ajaxcheck.php",{mamh:u},function(data){
+					if(data==0){
+                  	$(".thongbao").html("co the su dung mamh nay");
+                  	$(".thongbao").css("color","blue");
+                  }else{
+                  	$(".thongbao").html("mamh da ton tai");
+                  	$(".thongbao").css("color","red");
+                  }
+				});
+			});
+		});
+	</script>
 </head>
 <body>
     <?php include 'Views/home.php' ?>
@@ -11,7 +28,8 @@
 		<table>
 			<tr>
 				<td>Ma mon hoc:</td>
-				<td><input type="text" name="mamh" placeholder="Ma mon hoc"></td>
+				<td><input type="text" class="mamh" name="mamh" placeholder="Ma mon hoc"></td>
+				<td class="thongbao"></td>
 			</tr>
 			<tr>
 				<td>Ten mon hoc:</td>

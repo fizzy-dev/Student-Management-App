@@ -2,6 +2,23 @@
 <html>
 <head>
 	<title>them lop hoc</title>
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+            $(".malop").blur(function(){
+           	    var u=$(this).val();
+             	$.post("ajaxcheck.php",{malop:u},function(data){
+                if(data==0){
+                  	$(".thongbao").html("co the su dung malop nay");
+                  	$(".thongbao").css("color","blue");
+                  }else{
+                  	$(".thongbao").html("malop da ton tai");
+                  	$(".thongbao").css("color","red");
+                  }
+           	    });
+            });
+		});
+	</script>
 </head>
 <body>
     <?php include 'Views/home.php' ?>
@@ -11,7 +28,8 @@
 		<table>
 			<tr>
 				<td>Ma lop:</td>
-				<td><input type="text" name="malop" placeholder="Ma lop"></td>
+				<td><input type="text" class="malop" name="malop" placeholder="Ma lop"></td>
+				<td class="thongbao"></td>
 			</tr>
 			<tr>
 				<td>Ma mon hoc:</td>

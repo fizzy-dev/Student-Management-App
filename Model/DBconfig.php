@@ -241,6 +241,13 @@ class Database{
     	}
     	return $data;
     }
+    // AJAX CHECK STUDENT
+    public function CheckData($data,$table,$column)
+    {
+    	$sql="SELECT * FROM $table WHERE $column = '$data' ";
+    	$this->execute($sql);
+    	return $this->num_rows();
+    }
 }
 
 

@@ -2,6 +2,23 @@
 <html>
 <head>
 	<title>Them giao vien -Quan li giao vien</title>
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+           $(".magv").blur(function(){
+               var u=$(this).val();
+               $.post("ajaxcheck.php",{magv:u},function(data){
+               	if(data==0){
+                  	$(".thongbao").html("co the su dung magv nay");
+                  	$(".thongbao").css("color","blue");
+                  }else{
+                  	$(".thongbao").html("magv da ton tai");
+                  	$(".thongbao").css("color","red");
+                  }
+               });
+           });
+		});
+	</script>
 </head>
 <body>
     <?php include 'Views/home.php' ?>
@@ -11,7 +28,8 @@
 		<table>
 			<tr>
 				<td>MaGV:</td>
-				<td><input type="text" name="magv" placeholder="Ma giac vien"></td>
+				<td><input type="text" name="magv" class="magv" placeholder="Ma giao vien"></td>
+				<td class="thongbao"></td>
 			</tr>
 			<tr>
 				<td>Ho va ten:</td>

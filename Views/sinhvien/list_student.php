@@ -1,6 +1,6 @@
 <?php include 'Views/home.php' ?>
-<div class="danhsach">
-<h3>DANH SACH THANH VIEN</h3>
+<div>
+<h3>DANH SACH SINH VIEN</h3>
 
 <div>
 	<form action="" method="GET">

@@ -2,6 +2,24 @@
 <html>
 <head>
 	<title>Them sinh vien -Quan li sinh vien</title>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".masv").blur(function(){
+				var u= $(this).val();
+				$.post("ajaxcheck.php",{masv:u},function(data){
+                  if(data==0){
+                  	$(".thongbao").html("co the su dung masv nay");
+                  	$(".thongbao").css("color","blue");
+                  }else{
+                  	$(".thongbao").html("masv da ton tai");
+                  	$(".thongbao").css("color","red");
+                  }
+				});
+			});
+		});
+	</script>
 </head>
 <body>
     <?php include 'Views/home.php' ?>
@@ -15,7 +33,8 @@
 			</tr>
 			<tr>
 				<td>MSSV:</td>
-				<td><input type="text" name="mssv" placeholder="mssv"></td>
+				<td><input type="text" class="masv" name="mssv" placeholder="mssv"></td>
+				<td><div class="thongbao"></div></td>
 			</tr>
 			<tr>
 				<td>Que quan:</td>
