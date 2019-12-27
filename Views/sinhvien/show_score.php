@@ -12,8 +12,9 @@
 	<thead>
 		<tr>
 			<th>STT</th>
-			<th>Diem</th>
+			<th>Mon hoc</th>
 			<th>Ma Lop</th>
+			<th>Diem</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -23,6 +24,7 @@
 		?>
 		<tr>
 			<td><?php echo $stt ?></td>
+			<td><?php echo $value['tenmh']?></td>
 			<td><?php echo $value['malop']?></td>
 			<td><?php echo $value['diem'] ?></td>
 			

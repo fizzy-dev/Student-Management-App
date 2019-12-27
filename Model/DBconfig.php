@@ -107,7 +107,8 @@ class Database{
 
 	public function ShowScore($id)
 	{
-		$sql="SELECT * FROM sinhvienlop WHERE masv ='$id' ";
+		//$sql="SELECT * FROM sinhvienlop WHERE masv ='$id' ";
+		$sql="SELECT sinhvienlop.masv ,sinhvienlop.diem ,sinhvien.tensv , monhoc.tenmh,lop.malop FROM (sinhvienlop INNER JOIN (lop INNER JOIN monhoc ON lop.mamh=monhoc.mamh) on sinhvienlop.malop=lop.malop) INNER JOIN sinhvien on sinhvien.masv=sinhvienlop.masv WHERE sinhvienlop.masv='$id' ";
 		$this->execute($sql); 
 		if($this->num_rows()==0)
     	{
@@ -178,7 +179,9 @@ class Database{
 //SINHVIEN-LOP ACTION
 	public function getStudentInClass($malop,$table)
 	{
-		$sql="SELECT * FROM $table WHERE malop='$malop' ";
+		//$sql="SELECT * FROM $table WHERE malop='$malop' ";
+		$sql="SELECT * FROM $table INNER JOIN sinhvien ON sinhvienlop.masv=sinhvien.masv 
+		WHERE sinhvienlop.malop='$malop'";
 		$this->execute($sql);
 		if($this->num_rows()==0)
 		{

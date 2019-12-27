@@ -12,6 +12,7 @@
 	<thead>
 		<tr>
 			<th>STT</th>
+			<th>MSSV</th>
 			<th>Ten sinh vien</th>
 			<th>Diem</th>
 			<th>Hanh dong</th>
@@ -25,6 +26,7 @@
 		<tr>
 			<td><?php echo $stt ?></td>
 			<td><?php echo $value['masv'] ?></td>
+			<td><?php echo $value['tensv'] ?></td>
 			<td><?php echo $value['diem'] ?></td>
 			<td>
 				<a href="index.php?controller=sinhvien-lop&action=delete&malop=<?php echo $malop ?>&masv=<?php echo $value['masv'] ?>">Delete</a>

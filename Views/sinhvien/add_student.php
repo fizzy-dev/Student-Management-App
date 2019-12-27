@@ -46,7 +46,7 @@
 			</tr>
 			<tr>
 				<td>&nbsp</td>
-				<td><input type="submit" name="add_user" value="Them thanh vien"></td>
+				<td><input type="submit" name="add_user" value="Them sinh vien"></td>
 			</tr>
 		</table>
 	</form>

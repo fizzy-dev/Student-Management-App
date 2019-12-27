@@ -6,8 +6,8 @@
 		<tr>
 			<th>STT</th>
 			<th>MaMH</th>
-			<th>TEN MON HOC</th>
-			<th>SO TIN CHI</th>
+			<th>MON HOC</th>
+			<th>TIN CHI</th>
 			<th>HANH DONG</th>
 		</tr>
 	</thead>

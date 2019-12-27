@@ -12,6 +12,7 @@
 	<thead>
 		<tr>
 			<th>STT</th>
+			<th>MSSV</th>
 			<th>Ten sinh vien</th>
 			<th>Diem</th>
 		</tr>
@@ -25,6 +26,7 @@
 		<tr>
 			<td><?php echo $stt ?></td>
 			<td><?php echo $value['masv'] ?></td>
+			<td><?php echo $value['tensv']?></td>
 			<td>		
             <input type="text" name="<?php echo $str ?>" value="<?php echo $value['diem'] ?>">      
 			</td>
