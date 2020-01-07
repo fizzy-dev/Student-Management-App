@@ -121,6 +121,52 @@ class Database{
     	return $data;
 	}
 
+	public function ChuyenXml($fp)
+	{
+		$sql="SELECT * FROM sinhvien";	
+		$fo = fopen($fp,"w");
+        $fw = fwrite($fo,'<?xml version="1.0" encoding="UTF-8"?>');
+        $fw = fwrite($fo,'<sinhvienlop>');
+        $this->execute($sql);
+        if($this->num_rows()!=0)
+		{
+		   while($row = mysqli_fetch_array($this->result)){
+	        $fw = fwrite($fo,"<sinhvien>");
+	        $fw = fwrite($fo,'<masv>'.$row['masv'].'</masv>');
+           	$fw = fwrite($fo,'<tensv>'.$row['tensv'].'</tensv>');
+           	$fw = fwrite($fo,'<ngaysinh>'.$row['ngaysinh'].'</ngaysinh>');
+           	$fw = fwrite($fo,'<quequan>'.$row['quequan'].'</quequan>');
+	        $fw = fwrite($fo,'</sinhvien>');
+            }
+		}
+		$fw = fwrite($fo,'</sinhvienlop>');
+        $fc = fclose($fo);
+        return 1;
+	}
+
+    public function Intop3()
+    {
+     	$sql="SELECT sinhvien.masv,sinhvien.hosv,sinhvien.tensv,SUM(sinhvienlop.diem*monhoc.sotc)/ SUM(monhoc.sotc) as diemtrungbinh 
+        FROM (sinhvienlop INNER JOIN sinhvien ON sinhvienlop.masv=sinhvien.masv) 
+        INNER JOIN (lop INNER join monhoc on monhoc.mamh=lop.mamh) 
+        on sinhvienlop.malop=lop.malop 
+        GROUP by sinhvienlop.masv 
+        ORDER by diemtrungbinh DESC 
+        LIMIT 3";
+      
+        $this->execute($sql);
+        if($this->num_rows()==0)
+    	{
+    		$data=0;
+    	}else{
+    		while($datas=$this->getData()){
+    			$data[]=$datas;
+    		}
+    	}
+    	return $data;
+    }
+
+
  // TEACHER ACTION
 	public function InsertTeacher($magv,$tengv,$donvi)
 	{

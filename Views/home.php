@@ -112,6 +112,15 @@ body {
       <a href="index.php?controller=lop-hoc&action=list">Danh sach lop</a>
       <a href="index.php?controller=lop-hoc&action=add">Them lop hoc</a>
     </div>
+  </div> 
+  <!--MENU QUAN LY MON HOC-->
+  <div class="dropdown">
+    <button class="dropbtn">Top 3 sinh vien 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="index.php?controller=thanh-vien&action=top3">In 3 sinh vien diem cao nhat</a>
+    </div>
   </div>  
 </div>
  </body>

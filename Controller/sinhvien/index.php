@@ -81,6 +81,29 @@ switch ($action) {
       require_once("Views/sinhvien/show_score.php");
       break;
     }
+
+    case 'db-xml':
+    {
+      if(isset($_GET['add_xml']))
+      {
+        $fp=$_GET['filename'];
+        $db->ChuyenXml($fp);
+      }
+      require_once("Views/sinhvien/chuyenxml.php");
+      break;
+    }
+
+    case "top3":
+    { 
+      if(isset($_GET['gui']))
+      {
+        $namhoc=$_GET('namhoc');
+        $hocki=$_GET('hocki');
+      }
+      $data=$db->Intop3();
+      require_once("Views/sinhvien/top3.php");
+      break;
+    }
     
 	default:
 		# code...
