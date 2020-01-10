@@ -33,6 +33,9 @@
       case 'sinhvien-lop':
          require_once("Controller/sinhvienlop/index.php");
          break;
+      case 'database':
+         require_once("Controller/db/index.php");
+         break;
       default:
          # code...
          break;

@@ -86,6 +86,57 @@ class Database{
 		}
 		return $data;
 	}
+
+ // DB ACTION
+    public function ResetDatabase()
+    {
+        $sql="DELETE FROM sinhvienlop";
+        $sql1="DELETE FROM sinhvien";
+        $sql2="DELETE FROM monhoc";
+        $sql3="DELETE FROM lop";
+        $sql4="DELETE FROM giaovien";
+        $this->execute($sql);
+        $this->execute($sql1);
+        $this->execute($sql2);
+        $this->execute($sql3);
+        $this->execute($sql4);
+        return 1;
+    }
+
+    public function ImportDatabase($file,$table)
+    {
+    	$file=fopen($file,'r');
+    	while($row =fgetcsv($file))
+    	{
+    		$value = "'". implode("','",$row)."'";
+    		if($table=="sinhvien")
+    		{
+    			$sql="INSERT INTO sinhvien(masv,hosv,tensv,ngaysinh,quequan) VALUES(".$value.")";
+    		    $this->execute($sql);
+    		}else
+    		if($table == "monhoc")
+    		{
+    		    $sql="INSERT INTO monhoc(mamh,tenmh,sotc) VALUES(".$value.")";
+    		    $this->execute($sql);	
+    		}else
+    		if($table == "giaovien")
+    		{
+    		    $sql="INSERT INTO giaovien(magv,hogv,tengv,donvi) VALUES(".$value.")";
+    		    $this->execute($sql);	
+    		}else
+    		if($table == "lop")
+    		{
+    		    $sql="INSERT INTO lop(malop,mamh,namhoc,hocki,magv) VALUES(".$value.")";
+    		    $this->execute($sql);	
+    		}else
+    		if($table == "sinhvienlop")
+    		{
+    		    $sql="INSERT INTO sinhvienlop(masv,malop,diem) VALUES(".$value.")";
+    		    $this->execute($sql);	
+    		}
+    	}
+    }
+
  // STUDENT ACTION
 	public function InsertStudent($mssv,$hoten,$namsinh,$quequan)
 	{
